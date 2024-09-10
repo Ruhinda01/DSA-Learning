@@ -82,6 +82,8 @@ class DoublyLinkedList:
         while itr:
             if count == index - 1:
                 node = Node(data, itr.next, itr)
+                if itr.next:
+                    itr.next.prev = node
                 itr.next = node
                 break
             itr = itr.next
